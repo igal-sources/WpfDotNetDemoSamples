@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace EventTypesDemo.Helpers
+namespace WpfDotNetDemoSamples.Helpers
 {
     public class RelayCommand : ICommand
     {

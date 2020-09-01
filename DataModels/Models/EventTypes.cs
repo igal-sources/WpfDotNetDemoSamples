@@ -1,7 +1,7 @@
-﻿using EventTypesDemo.Helpers;
+﻿using WpfDotNetDemoSamples.Helpers;
 using System.Collections.ObjectModel;
 
-namespace EventTypesDemo.DataModels
+namespace WpfDotNetDemoSamples.DataModels.Models
 {
     public sealed partial class EventTypes : ViewModelBase
     {

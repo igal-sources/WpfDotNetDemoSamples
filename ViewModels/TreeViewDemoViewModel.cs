@@ -1,19 +1,19 @@
-﻿using EventTypesDemo.DataModels;
-using EventTypesDemo.Helpers;
+﻿using WpfDotNetDemoSamples.DataModels.Models;
+using WpfDotNetDemoSamples.Helpers;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
 
-namespace EventTypesDemo.ViewModels
+namespace WpfDotNetDemoSamples.ViewModels
 {
     public class EventItems
     {
         public ObservableCollection<EventTypes> EventTypes { get; set; }
     }
 
-    public class EventTypesViewModel : ViewModelBase
+    public class TreeViewDemoViewModel : ViewModelBase
     {
         #region Properties
         private EventItems _eventTypes;
@@ -33,18 +33,18 @@ namespace EventTypesDemo.ViewModels
 
         #endregion
 
-        public EventTypesViewModel()
+        public TreeViewDemoViewModel()
         {
-            var events = DeserializeEvents();
+            var events = DeserializeItemsData();
             EventTypesUI = new EventItems
             {
                 EventTypes = new ObservableCollection<EventTypes>()
             };
 
-            RefreshEventTypeTree(events);
+            RefreshTree(events);
         }
 
-        private EventItems DeserializeEvents()
+        private EventItems DeserializeItemsData()
         {
             using (StreamReader reader = new StreamReader(@"C:\CIT-Stuff\MyDevelopment\DotNetSamples\EventTypesDemo\DataModels\event-types.json"))
             {
@@ -146,7 +146,7 @@ namespace EventTypesDemo.ViewModels
 
         }
 
-        private void RefreshEventTypeTree(EventItems events)
+        private void RefreshTree(EventItems events)
         {
             foreach (var item in events.EventTypes.ToList())
             {
@@ -163,7 +163,6 @@ namespace EventTypesDemo.ViewModels
                     EventTypesUI.EventTypes.Add(item);
                 }
             }
-
         }
 
     }

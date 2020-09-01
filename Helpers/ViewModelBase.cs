@@ -2,8 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 
-
-namespace EventTypesDemo.Helpers
+namespace WpfDotNetDemoSamples.Helpers
 {
     public abstract class ViewModelBase : NotifyObject
     {

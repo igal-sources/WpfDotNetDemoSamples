@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace EventTypesDemo.Helpers
+namespace WpfDotNetDemoSamples.Helpers
 {
     [Serializable]
     public class NotifyObject : INotifyPropertyChanged
